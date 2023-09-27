@@ -19,6 +19,8 @@ async function getWeatherData(type) {
     return response.data
 }
 
+// 12
+
 // 將getWeatherData函數導出，使其他模組可以使用
 module.exports = {
     getWeatherData,
