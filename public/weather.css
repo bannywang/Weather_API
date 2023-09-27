@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #84fab0, #8fd3f4);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.weather-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.weather-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+}
+
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.weather-details {
+    flex: 1;
+    min-width: calc(20% - 20px);
+    border-top: 2px solid #ecf0f1;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for transform property */
+    cursor: pointer; /* Change the cursor to a hand when hovering over the card */
+    height: 300px;
+}
+
+.weather-details:hover {
+    transform: scale(1.1); /* Enlarge the card by 10% when hovered */
+    z-index: 1; /* Bring the hovered card to the front */
+}
+
+.weather-details h3 {
+    color: #34495e;
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.weather-details p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+}
+
+.json_title {
+    text-align: center;
+}
