@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>天氣預報</title>
+        <link rel="stylesheet" href="/weather.css" />
+    </head>
+    <body>
+        <section>
+            <h1 class="weather-title">天氣預報</h1>
+            
+            <div class="weather-container">
+                <% if (weatherData && weatherData.records && weatherData.records.location) { %>
+                <h2 class="json_title"><%= weatherData.records.datasetDescription %></h2>
+                <div class="locations">
+                    <% weatherData.records.location.forEach(location => { %>
+                    <div class="weather-details">
+                        <h3><%= location.locationName %></h3>
+                        <% location.weatherElement.forEach(element => { %>
+                        <p><%= element.elementName %>：<%= element.time[0].parameter.parameterName %></p>
+                        <% }); %>
+                    </div>
+                    <% }); %>
+                </div>
+                <% } else { %>
+                <p class="error-message">Unable to fetch weather data.</p>
+                <% } %>
+            </div>
+        </section>
+    </body>
+</html>
